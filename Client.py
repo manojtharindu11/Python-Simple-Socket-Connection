@@ -8,6 +8,9 @@ BUF_SIZE = 1024
 con = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 con.connect((address, port))  # Connecting to the server
 
+msg = "Hello!"
+con.send(bytes(msg,"utf-8"))
+
 data = con.recv(BUF_SIZE)
 con.close()
 print(data.decode("utf-8"))
